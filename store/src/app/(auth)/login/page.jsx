@@ -7,7 +7,7 @@ export const metadata = {
 const index = () => {
 
   return (
-    <main className="px-5">
+    <main className="px-5 ">
      <LoginForm />
     </main>
   );
