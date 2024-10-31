@@ -1,4 +1,5 @@
 import "./globals.css";
+
 import NavBar from "../layouts/common/navbar";
 import Footer from "../layouts/common/footer";
 
