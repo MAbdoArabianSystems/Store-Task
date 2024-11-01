@@ -4,7 +4,7 @@ export const metadata = {
     title: `Store App | Login`,
   };
 
-const index = () => {
+const Index = () => {
 
   return (
     <main className="">
@@ -13,4 +13,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

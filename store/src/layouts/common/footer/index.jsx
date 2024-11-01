@@ -4,7 +4,7 @@ import MainFooter from './MainFooter';
 import Footer from './Footer';
 
 
-const index = () => {
+const Index = () => {
   return (
     <footer className='m-auto max-w-[1600px] px-5'>
       <MainFooter />
@@ -13,4 +13,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

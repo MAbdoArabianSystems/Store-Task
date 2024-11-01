@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import Form from "./Form";
+import Image from "next/image";
 
-const index = () => {
+const Index = () => {
   return (
     <section>
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -12,7 +13,7 @@ const index = () => {
           className="flex items-center mb-6 text-2xl font-semibold text-gray-900 "
         >
           <div className={`w-8 h-8 mr-2`}>
-            <img
+            <Image
               className={`w-full h-full mr-2`}
               src={`/assets/images/login/logo.png`}
               alt={`logo`}
@@ -33,4 +34,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
