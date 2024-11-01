@@ -5,57 +5,28 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-
 const navLinks = [
-  {
-    id: "new-in",
-    title: "new in",
-  },
-  {
-    id: "shop-by",
-    title: "shop by",
-  },
-  {
-    id: "women",
-    title: "women",
-  },
-  {
-    id: "men",
-    title: "men",
-  },
-  {
-    id: "designers",
-    title: "designers",
-  },
-  {
-    id: "shoes",
-    title: "shoes",
-  },
-  {
-    id: "bags",
-    title: "bags",
-  },
-  {
-    id: "accessories",
-    title: "accessories",
-  },
-  {
-    id: "jewellery",
-    title: "jewellery",
-  },
+  { id: "new-in", title: "new in" },
+  { id: "shop-by", title: "shop by" },
+  { id: "women", title: "women" },
+  { id: "men", title: "men" },
+  { id: "designers", title: "designers" },
+  { id: "shoes", title: "shoes" },
+  { id: "bags", title: "bags" },
+  { id: "accessories", title: "accessories" },
+  { id: "jewellery", title: "jewellery" },
 ];
 
-const index = () => {
+const Index = () => {
   const searchParams = useSearchParams();
   const category = searchParams.get("category");
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
 
-  useEffect(()=>{
-    setActive(category ? `${category}` :"")
-  },[category])
+  useEffect(() => {
+    setActive(category ? `${category}` : "");
+  }, [category]);
 
-  
   return (
     <div className="flex py-6 justify-between items-center navbar bg-white">
       {/* Desktop Navigation */}
@@ -70,7 +41,7 @@ const index = () => {
               setActive(nav.title);
             }}
           >
-            <Link href={`?category=${nav.id}`} className=" font-bold">
+            <Link href={`?category=${nav.id}`} className="font-bold">
               {nav.title?.toLocaleUpperCase()}
             </Link>
           </li>
@@ -81,11 +52,7 @@ const index = () => {
       <div className="sm:hidden flex flex-row justify-evenly w-full px-5">
         {/* Logo */}
         <Link href="/" className="w-8 h-8">
-          <Image
-            src={`/assets/images/login/logo.png`}
-            alt="logo"
-            className="w-full h-full"
-          />
+          <Image src={`/assets/images/login/logo.png`} alt="logo" className="w-full h-full" />
         </Link>
         <div className="flex flex-1 justify-end items-center">
           <Image
@@ -130,4 +97,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
