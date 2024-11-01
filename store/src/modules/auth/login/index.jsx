@@ -4,7 +4,7 @@ import Link from "next/link";
 import Form from "./Form";
 import Image from "next/image";
 
-const index = () => {
+const Index = () => {
   return (
     <section>
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
