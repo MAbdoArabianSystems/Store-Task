@@ -1,13 +1,15 @@
 'use client'
 
-import MainHeader from './MainHeader'
-import Header from './Header'
+import MainNav from './MainNav'
+import Nav from './nav'
 
 const index = () => {
   return (
-    <header className='m-auto max-w-[1600px] px-5'>
-      <MainHeader />
-      <Header />
+    <header className='m-auto w-full bg-neutral-700 '>
+      <nav>
+      <MainNav />
+      <Nav />
+      </nav>
     </header>
   )
 }
