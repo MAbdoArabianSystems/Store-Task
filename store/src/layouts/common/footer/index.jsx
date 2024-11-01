@@ -6,7 +6,7 @@ import Footer from './Footer';
 
 const Index = () => {
   return (
-    <footer className='m-auto max-w-[1600px] px-5'>
+    <footer className='m-auto w-full bg-black/5 py-5'>
       <MainFooter />
       <Footer />
     </footer>
