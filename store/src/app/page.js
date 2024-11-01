@@ -1,19 +1,23 @@
-"use client";
+'use client'
 
-import { NotoKufiArabic, plusJakartaSans } from "@/helpers/next-fonts";
 
-import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
+import { useEffect } from "react";
 
 export default function Home() {
-  const { locale } = useRouter();
+
+  const token = Cookies.get('token');
+  useEffect(() => {
+    if (!token) {
+      window.location = '/login'
+    }
+  }, [token]);
 
   return (
-    <main
-      className={`${
-        locale === "ar" ? NotoKufiArabic : plusJakartaSans
-      } antialiased`}
-    >
-      <section className="m-auto max-w-[1600px] px-5 lg:h-[87vh]">welcome in app</section>
+    <main>
+      <section className="m-auto max-w-[1600px] px-5 lg:h-[87vh]">
+        welcome in app
+      </section>
     </main>
   );
 }
