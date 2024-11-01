@@ -19,11 +19,13 @@ const Index = () => {
         <div className="m-auto">
           <div
             onClick={backToCategory}
-            className="text-xl flex flex-row gap-x-2"
+            className="text-xl flex flex-row gap-x-2 cursor-pointer"
           >
             <Image
+            width={32}
+            height={32}
               src={`/assets/images/nav/arrow.png`}
-              className={`w-8 transform scale-x-[-1]`}
+              className={`transform scale-x-[-1]`}
               alt="arrow"
             />
             <p> {category ? category : "No Category Selected"}</p>

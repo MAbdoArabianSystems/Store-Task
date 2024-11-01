@@ -51,18 +51,24 @@ const Index = () => {
       {/* Mobile Navigation */}
       <div className="sm:hidden flex flex-row justify-evenly w-full px-5">
         {/* Logo */}
-        <Link href="/" className="w-8 h-8">
-          <Image src={`/assets/images/login/logo.png`} alt="logo" className="w-full h-full" />
+        <Link href="/" className="relative w-8 h-8">
+  <Image
+    src="/assets/images/login/logo.png"
+    alt="logo"
+    fill
+    style={{ objectFit: "contain" }}
+  />
         </Link>
         <div className="flex flex-1 justify-end items-center">
           <Image
             src={
-              toggle
+              `${toggle
                 ? `/assets/images/nav/icons-close.png`
-                : `/assets/images/nav/icons-menu.png`
+                : `/assets/images/nav/icons-menu.png`}`
             }
             alt="icon-nav"
-            className="w-[28px] h-[28px] object-contain"
+            width={28}
+            height={28}
             onClick={() => setToggle(!toggle)}
           />
 
