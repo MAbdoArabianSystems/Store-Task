@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Form from "./Form";
+import Image from "next/image";
 
 const index = () => {
   return (
@@ -12,7 +13,7 @@ const index = () => {
           className="flex items-center mb-6 text-2xl font-semibold text-gray-900 "
         >
           <div className={`w-8 h-8 mr-2`}>
-            <img
+            <Image
               className={`w-full h-full mr-2`}
               src={`/assets/images/login/logo.png`}
               alt={`logo`}

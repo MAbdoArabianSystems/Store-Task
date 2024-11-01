@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import React from "react";
@@ -21,7 +22,7 @@ const Index = () => {
             onClick={backToCategory}
             className="text-xl flex flex-row gap-x-2"
           >
-            <img
+            <Image
               src={`/assets/images/nav/arrow.png`}
               className={`w-8 transform scale-x-[-1]`}
               alt="arrow"

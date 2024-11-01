@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -80,14 +81,14 @@ const index = () => {
       <div className="sm:hidden flex flex-row justify-evenly w-full px-5">
         {/* Logo */}
         <Link href="/" className="w-8 h-8">
-          <img
+          <Image
             src={`/assets/images/login/logo.png`}
             alt="logo"
             className="w-full h-full"
           />
         </Link>
         <div className="flex flex-1 justify-end items-center">
-          <img
+          <Image
             src={
               toggle
                 ? `/assets/images/nav/icons-close.png`
