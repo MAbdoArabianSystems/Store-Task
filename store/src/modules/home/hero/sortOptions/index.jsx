@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 
@@ -54,11 +55,14 @@ const Index = () => {
     <div className="mt-5 flex flex-wrap justify-center align-middle items-center gap-x-5 md:gap-x-10 lg:gap-x-20 gap-y-6">
       <div className="search-category flex gap-x-4 align-middle justify-center items-center md:w-[470px] lg:w-[510px] text-[12px] md:text-[16px] lg:text-[20px]">
         <p>PRODUCT CATEGORIES</p>
-        <img
+        <Image
           src="/assets/images/home/sm-arrow-bottom.png"
           alt="sm-arrow"
+          width={16}
+          height={16}
           className="w-4 h-4 cursor-pointer"
         />
+
         <p className=" cursor-pointer">
           <span className=" font-medium text-[#00000071]">Home</span> /{" "}
           <span className=" font-semibold">
@@ -103,13 +107,13 @@ const Index = () => {
           </span>
           <div className="flex gap-x-2 ms-4 justify-center items-center align-middle cursor-pointer">
             {activeImage.map((img) => (
-              <img
+              <Image
                 key={img.id}
                 src={img.isActive ? img.imageActive : img.image}
                 alt={`grid-${img.id}`}
-                className={`${
-                  img?.id === 4 ? "w-9 h-9 " : "w-8 h-8 "
-                } cursor-pointer`}
+                width={img?.id === 4 ? 36 : 32} 
+                height={img?.id === 4 ? 36 : 32}
+                className="cursor-pointer"
                 onClick={() => {
                   setActiveImage(img.id);
                   updateSearchParams("grid", `${img?.id}`);
@@ -124,9 +128,11 @@ const Index = () => {
         onClick={() => updateSearchParams("sort", "desc")}
       >
         <p className=" font-semibold">Sort by latest</p>
-        <img
+        <Image
           src="/assets/images/home/sm-arrow-bottom.png"
           alt="sm-arrow"
+          width={16}
+          height={16}
           className="w-4 h-4 cursor-pointer"
         />
       </div>
@@ -138,11 +144,13 @@ const Index = () => {
           onMouseLeave={() => setPriceMenu(!priceMenu)}
         >
           <p>FILTER BY PRICE</p>
-          <img
-            src="/assets/images/home/sm-arrow-bottom.png"
-            alt="sm-arrow"
-            className="w-4 h-4 cursor-pointer"
-          />
+          <Image
+          src="/assets/images/home/sm-arrow-bottom.png"
+          alt="sm-arrow"
+          width={16}
+          height={16}
+          className="w-4 h-4 cursor-pointer"
+        />
         </div>
 
         <div
