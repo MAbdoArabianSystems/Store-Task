@@ -19,13 +19,16 @@ const navLinks = [
 
 const Index = () => {
   const searchParams = useSearchParams();
+  const grid = searchParams.get("grid");
+  const itemsCount = searchParams.get("items");
+  const sortBy = searchParams.get("sort");
   const category = searchParams.get("category");
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     setActive(category ? `${category}` : "");
-  }, [category]);
+  }, [category, active]);
 
   return (
     <div className="flex py-6 justify-between items-center navbar bg-white">
@@ -41,7 +44,12 @@ const Index = () => {
               setActive(nav.title);
             }}
           >
-            <Link href={`?category=${nav.id}`} className="font-bold">
+            <Link
+              href={`?category=${nav.id}${grid ? `&grid=${grid}` : ""}${
+                itemsCount ? `&items=${itemsCount}` : ""
+              }${sortBy ? `&sort=${sortBy}` : ""}`}
+              className="font-bold"
+            >
               {nav.title?.toLocaleUpperCase()}
             </Link>
           </li>
@@ -52,20 +60,20 @@ const Index = () => {
       <div className="sm:hidden flex flex-row justify-evenly w-full px-5">
         {/* Logo */}
         <Link href="/" className="relative w-8 h-8">
-  <Image
-    src="/assets/images/login/logo.png"
-    alt="logo"
-    fill
-    style={{ objectFit: "contain" }}
-  />
+          <Image
+            src="/assets/images/login/logo.png"
+            alt="logo"
+            fill
+            style={{ objectFit: "contain" }}
+          />
         </Link>
         <div className="flex flex-1 justify-end items-center">
           <Image
-            src={
-              `${toggle
+            src={`${
+              toggle
                 ? `/assets/images/nav/icons-close.png`
-                : `/assets/images/nav/icons-menu.png`}`
-            }
+                : `/assets/images/nav/icons-menu.png`
+            }`}
             alt="icon-nav"
             width={28}
             height={28}
@@ -90,7 +98,11 @@ const Index = () => {
                     setToggle(false);
                   }}
                 >
-                  <Link href={`?category=${nav.id}`}>
+                  <Link
+                    href={`?category=${nav.id}${grid ? `&grid=${grid}` : ""}${
+                      itemsCount ? `&items=${itemsCount}` : ""
+                    }${sortBy ? `&sort=${sortBy}` : ""}`}
+                  >
                     {nav.title?.toLocaleUpperCase()}
                   </Link>
                 </li>

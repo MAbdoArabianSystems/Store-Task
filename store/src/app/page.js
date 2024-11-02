@@ -3,6 +3,7 @@
 
 import Cookies from "js-cookie";
 import { useEffect } from "react";
+import HomePage from '@/modules/home'
 
 export default function Home() {
 
@@ -16,7 +17,7 @@ export default function Home() {
   return (
     <main>
       <section className="m-auto max-w-[1600px] px-5 lg:h-[87vh]">
-        welcome in app
+        <HomePage />
       </section>
     </main>
   );
