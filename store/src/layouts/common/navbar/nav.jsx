@@ -6,7 +6,7 @@ import React from "react";
 
 const Index = () => {
   const searchParams = useSearchParams();
-  const category = searchParams.get("category");
+  const category = searchParams.get("category")?.toLocaleUpperCase();
 
   //this function for controlling to back history
   const backToCategory = () => {
