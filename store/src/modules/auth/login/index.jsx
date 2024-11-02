@@ -14,7 +14,8 @@ const Index = () => {
         >
           <div className={`w-8 h-8 mr-2`}>
             <Image
-            layout="fill"
+              width={32}
+              height={32}
               className={`mr-2`}
               src={`/assets/images/login/logo.png`}
               alt={`logo`}
